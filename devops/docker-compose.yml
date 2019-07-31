@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.6
+    ports:
+      - 3306:3306
+    volumes:
+      - /home/ftiburcio/Desktop/PESSOAL/PROJETOS/volume:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=development
+    networks:
+      - development-network
+  app:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - db:db
+    ports:
+      - 80:80
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - db
+    networks:
+      - development-network
+networks:
+ development-network:
+   driver: bridge
