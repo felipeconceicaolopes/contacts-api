@@ -1,24 +1,24 @@
 version: '3.3'
 services:
   db:
-    image: mysql:5.6
+    image: postgres
     ports:
-      - 3306:3306
+      - 15432:5432
     volumes:
-      - /home/ftiburcio/Desktop/PESSOAL/PROJETOS/volume:/var/lib/mysql
+      - /home/ftiburcio/Desktop/PESSOAL/PROJETOS/volume:/var/lib/postgresql
     environment:
-      - MYSQL_ROOT_PASSWORD=1234
-      - MYSQL_DATABASE=development
+      - POSTGRES_PASSWORD=1234
     networks:
       - development-network
   app:
-    image: phpmyadmin/phpmyadmin:latest
+    image: dpage/pgadmin4
     links:
       - db:db
     ports:
-      - 80:80
+      - 16543:80
     environment:
-      - PMA_ARBITRARY=1
+      PGADMIN_DEFAULT_EMAIL: "felipeconceicaolopes@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "@Madara1994"
     depends_on:
       - db
     networks:
