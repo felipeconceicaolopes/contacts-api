@@ -28,5 +28,5 @@ COPY . .
 RUN mvn clean install
 RUN rm -rf ~/.m2/repository
 
-ENTRYPOINT ["java","-jar","target/sharebase-1.0.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/target/contatos-0.0.1-SNAPSHOT.jar"]
 

@@ -3,11 +3,15 @@ services:
   db:
     image: postgres
     ports:
-      - 15432:5432
+      - 5432:5432
     volumes:
       - /home/ftiburcio/Desktop/PESSOAL/PROJETOS/volume:/var/lib/postgresql
     environment:
-      - POSTGRES_PASSWORD=1234
+      POSTGRES_DB: contatos
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: postgres
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
     networks:
       - development-network
   app:
@@ -15,14 +19,28 @@ services:
     links:
       - db:db
     ports:
-      - 16543:80
+      - 80:80
     environment:
       PGADMIN_DEFAULT_EMAIL: "felipeconceicaolopes@gmail.com"
-      PGADMIN_DEFAULT_PASSWORD: "@Madara1994"
+      PGADMIN_DEFAULT_PASSWORD: "1234"
     depends_on:
       - db
     networks:
       - development-network
+  contact-app:
+      build:
+        dockerfile: ./contatos.dockerfile
+        context: ..
+      image: ftiburcio/contacts
+      container_name: contacts-app
+      links:
+        - db
+      ports:
+        - 8080:8080
+      depends_on:
+        - db
+      networks:
+        - development-network
 networks:
  development-network:
    driver: bridge
