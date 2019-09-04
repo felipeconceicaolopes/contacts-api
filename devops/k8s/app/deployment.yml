@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  template:
+    metadata:
+      labels:
+        name: app-pod
+    spec:
+      containers:
+        - name: container-app-contacts
+          image: felipetiburcio/contacts
+          ports:
+            - containerPort: 80

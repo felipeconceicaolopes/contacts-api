@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres
+spec:
+  containers:
+    - name: container-postgres
+      image: postgres:11.2
+      ports:
+        - containerPort: 5432
+      env:
+        - name: POSTGRES_DB
+          value: "contatos"
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_PASSWORD
+          value: "1234"

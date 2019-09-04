@@ -28,5 +28,5 @@ COPY . .
 RUN mvn clean install
 RUN rm -rf ~/.m2/repository
 
-ENTRYPOINT ["java","-jar","/target/contatos-0.0.1-SNAPSHOT.jar"]
+CMD ["-jar","./target/contatos-0.0.1-SNAPSHOT.jar"]
 
