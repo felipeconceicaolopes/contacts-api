@@ -24,10 +24,6 @@ dependencies {
 	
 	compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
 	
-	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
-	
-	compile group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.1.0'
-	implementation 'org.olap4j:olap4j:0.9.7.309-JS-3'
-	implementation 'com.lowagie:itext:2.1.7.js2'	
+	compile group: 'javax.servlet', name: 'jstl', version: '1.2'	
 	
 }
