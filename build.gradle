@@ -22,8 +22,11 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.10'
 	annotationProcessor 'org.projectlombok:lombok:1.18.10'
 	
-	compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
+	runtimeOnly 'org.postgresql:postgresql'
 	
 	compile group: 'javax.servlet', name: 'jstl', version: '1.2'	
+	
+	compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.24'
+	
 	
 }
