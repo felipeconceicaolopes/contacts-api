@@ -21,7 +21,7 @@ In our Java applications, we have several files and dependencies which make it d
 - With Gradle we might get values of environments variables and system variables for used in our tasks and building validations;
 - We can broken build in archives, with example can having one archive for our tasks gradle;
 
-### Gradke Structure
+### Gradle Structure
 
 In archive `build.gradle` we have:
 - plugins: For put java versions and Spring version like this project, we can put others plugins;
