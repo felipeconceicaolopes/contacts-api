@@ -1,4 +1,4 @@
-package com.br.contact.service;
+package br.com.contact.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -16,7 +16,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import br.com.contact.entity.Contact;
 import br.com.contact.repository.ContactRepository;
-import br.com.contact.service.ContactService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ContactServiceTest {
