@@ -1,10 +1,10 @@
-package com.br.contatos.contatos;
+package com.br.contact;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class ContatosApplicationTests {
+public class ContactApplicationTests {
 
 	@Test
 	public void contextLoads() {
