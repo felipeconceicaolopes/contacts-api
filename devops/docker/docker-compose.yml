@@ -25,20 +25,20 @@ services:
       - db
     networks:
       - development-network
-#  contact-app:
-#      build:
-#        dockerfile: ./devops/docker/contatos.dockerfile
-#        context: ../../
-#      image: ftiburcio/contacts
-#      container_name: contacts-app
-#      links:
-#        - db:db
-#      ports:
-#        - 8080:8080
-#      depends_on:
-#        - db
-#      networks:
-#        - development-network
+  contact-app:
+      build:
+        dockerfile: ./devops/docker/contacts.dockerfile
+        context: ../../
+      image: ftiburcio/contacts
+      container_name: contacts-app
+      links:
+        - db:db
+      ports:
+        - 8080:8080
+      depends_on:
+        - db
+      networks:
+        - development-network
 networks:
  development-network:
    driver: bridge
