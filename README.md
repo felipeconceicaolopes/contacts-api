@@ -26,7 +26,7 @@ In our Java applications, we have several files and dependencies which make it d
 - With Gradle we might get values of environments variables and system variables for used in our tasks and building validations;
 - We can broken build in archives, with example can having one archive for our tasks gradle;
 
-### Gradle Structure
+### Gradke Structure
 
 In archive `build.gradle` we have:
 - plugins: For put java versions and Spring version like this project, we can put others plugins;
@@ -49,4 +49,8 @@ In kubernetes we have a Master where will i have my settings of services, he wil
 - Pod - The smallest structure of Kubernetes, thats does not mean that we have just one container, but for good practices this recommended;
 - Deployment - The structure that will abstract one Pod, this way allowing the Pod to be self-managed, this way if Pod "dies" it will be recreated automatically.
 - Service - The Service object allowing access a my Pod by providing an IP, because the Pod is a very mutable object that is constantly "dying" and being recreated. This way Kubernetes abstracts it from the Service, which is a more stable object. He even works as a Load Balance redirecting our requests.
-- StatefulSet - 
+- StatefulSet - Object that abstracts a Pod and will map our volumes so we don't lose configuration files and data.
+- Permissions - Allows only Pod of DB might read and write in our Volume;
+
+### K8S commits
+- [Add k8s configs](https://github.com/felipeconceicaolopes/contacts-api/commit/c24c5013db15e8e063bf2f86edbe0be248adcac6)
