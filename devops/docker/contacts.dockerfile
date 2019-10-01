@@ -24,4 +24,4 @@ COPY --from=builder --chown=app:app /contact-app/build/libs/contacts-api-0.0.1-S
 
 EXPOSE 8080
 
-CMD ["-jar","./build/libs/contacts-api-0.0.1-SNAPSHOT.jar"]
+CMD java -jar /contact-app/build/libs/contacts-api-0.0.1-SNAPSHOT.jar
