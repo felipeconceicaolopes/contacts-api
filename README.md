@@ -1,3 +1,4 @@
+
 # Contacts API
 API for studying and applying the concepts of Gradle and K8S
 ## Stack
@@ -7,6 +8,17 @@ API for studying and applying the concepts of Gradle and K8S
  - Kubernetes
 
 ## Installation
+
+How to build docker image and execute docker-compose
+
+For building image
+`sudo docker-compose -f devops/docker/docker-compose.yml build`
+
+For execute
+`sudo docker-compose -f devops/docker/docker-compose.yml up`
+
+Example
+`http://localhost:8080/swagger-ui.html`
 
 
 # Documentation
