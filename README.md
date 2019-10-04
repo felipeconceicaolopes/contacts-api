@@ -11,13 +11,16 @@ API for studying and applying the concepts of Gradle and K8S
 
 How to build docker image and execute docker-compose
 
-For building image
+For building image:
+
 `sudo docker-compose -f devops/docker/docker-compose.yml build`
 
-For execute
+For execute:
+
 `sudo docker-compose -f devops/docker/docker-compose.yml up`
 
-Example
+Example:
+
 `http://localhost:8080/swagger-ui.html`
 
 
@@ -52,6 +55,18 @@ In archive `build.gradle` we have:
 - [Replace maven to gradle WIP](https://github.com/felipeconceicaolopes/contacts-api/commit/191277a191a2e6a2aa0cfdae6d21f49111d7eed2)
 -  [Update dependency manager for gradle success and fix environment local](https://github.com/felipeconceicaolopes/contacts-api/commit/9fae3df431050e63c9c40ff655090828b6bdb35a)
 - [Removing maven from project](https://github.com/felipeconceicaolopes/contacts-api/commit/42a4b40703370977afccc7aca7eb361dd2e88051)
+
+## Overview Docker
+Before, speak of provide applications its was some hard things, since it demanded of physical server running our application and that's a unhelpful because the server resources will be underuse, after this fase wee have the Virtual Machines, that way a single server  can have multiple virtual machines allowing have multiples applications, but with multiples Operational systems to do maintenance yet and competing for machine resources. Containers came to solve this problem, they run on the base operating system and use within container only what is necessary for the application to run, managing by themselves all the resources they will consume from operating system. Docker is a technology that allow manage these containers and orchestrate them with docker-compose.
+
+### Dockerfile Structure
+- FROM - Image we will get from the docker hub to be based on our container;
+- USER - Base user for our container;
+- RUN - Command used to run steps in image construction;
+- WORKDIR - Command for define default workspace in container;
+- COPY - Used to copy files from our machine to the container or from one container to another;
+- EXPOSE - Expose one port of container;
+- CDM - Used to define one command for execute when container is ready;
 
 ## Overview Kubernetes
 Kubernetes is effectively a containers manager, before with docker-compose i needed to define how many containers i will have for my application, but thinking about scalability a better solution is Kubernetes. 
