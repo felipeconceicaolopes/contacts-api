@@ -37,3 +37,12 @@ dependencies {
     // Apache Commons IO 
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
 }
+
+bootRun {
+    println "Environment: ${System.properties['env']}"
+    environment env: System.properties['env']?: "local"
+}
+
+test{
+    environment env: System.properties['env']?: "local"
+}
